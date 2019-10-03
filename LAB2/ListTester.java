@@ -9,5 +9,6 @@ public class ListTester{
 		item2.setData(4);
 		list1.addElement(item2);
 		list1.addElement(item3);
+		ListElement nani = list1.getElement(0);
 	}
 }

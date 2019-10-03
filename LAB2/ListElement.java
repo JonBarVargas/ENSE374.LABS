@@ -44,8 +44,28 @@ public void addElement(ListElement le)
 	le.previous = this;
 	System.out.println("hooray");
 	System.out.println(le.previous);
-System.out.println(this.next);
+	System.out.println(this.next);
 }
-
+/**
+* @param index
+* the position of the linked list a user wishes to retrieve
+* @return
+*	None
+**/
+public ListElement getElement(int index)
+{
+	int count = 0;
+	ListElement test = this;
+	while (test.next != null && count <= index)
+	{
+		ListElement nextElement = test.next;
+		test = nextElement;
+		count++;
+		System.out.println(count);
+	}
+	System.out.println();
+	System.out.println(test);
+	return test;
+}
 
 }
