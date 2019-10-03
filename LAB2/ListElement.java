@@ -3,6 +3,8 @@ public class ListElement {
 	private ListElement next;
 	private ListElement previous;
 	private int data;
+	//private int listIndex;
+	
 	
 	public ListElement()
 	{
@@ -40,11 +42,22 @@ public int getData() {
 **/
 public void addElement(ListElement le)
 {
-	this.next = le;
-	le.previous = this;
-	System.out.println("hooray");
-	System.out.println(le.previous);
-	System.out.println(this.next);
+	ListElement test = this;
+	if(this.next == null){
+		this.next = le;
+		le.previous = this;
+	}
+	else
+	{
+		while (test.next != null)
+		{
+			System.out.println("traversing");
+			ListElement nextElement = test.next;
+			test = nextElement;
+		}
+		test.next= le;
+		le.previous =test;
+	}
 }
 /**
 * @param index
@@ -56,6 +69,12 @@ public ListElement getElement(int index)
 {
 	int count = 0;
 	ListElement test = this;
+	//this traverses all the way to the head of the list
+	while (test.previous != null)
+	{
+		ListElement previousElement = test.previous;
+		test = previousElement;
+	}
 	while (test.next != null && count <= index)
 	{
 		ListElement nextElement = test.next;
@@ -67,5 +86,39 @@ public ListElement getElement(int index)
 	System.out.println(test);
 	return test;
 }
+
+
+/**
+* @param 
+* 	None
+*@return
+*	None
+**/
+public void printLinkedListHead()
+{
+	ListElement test = this;
+	
+	while (test.previous != null)
+	{
+		ListElement previousElement = test.previous;
+		test = previousElement;
+		System.out.println(test.next);
+	}
+	System.out.println(test.getData());
+	while (test.next != null)
+	{
+		
+		ListElement nextElement = test.next;
+		test = nextElement;
+		System.out.println(test.getData());
+	}
+}
+
+
+
+
+
+
+
 
 }
