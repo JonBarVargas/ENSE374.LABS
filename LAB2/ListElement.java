@@ -1,6 +1,6 @@
 public class ListElement {
 	
-	private ListElement next ;
+	private ListElement next;
 	private ListElement previous;
 	private int data;
 	
@@ -25,15 +25,16 @@ public void setData(int data) {
 * @param 
 * 	None
 * @return
-*	None
+*	the current object's data
 **/
 public int getData() {
 	return this.data;
 }
 
 /**
+* adds another instance of ListElement to the current instance.
 * @param le
-* an integer to be stored in the node
+* the ListElement object to be added into the linked list
 *@return
 *	None
 **/
@@ -41,6 +42,9 @@ public void addElement(ListElement le)
 {
 	this.next = le;
 	le.previous = this;
+	System.out.println("hooray");
+	System.out.println(le.previous);
+System.out.println(this.next);
 }
 
 
