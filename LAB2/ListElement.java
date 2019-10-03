@@ -1,16 +1,15 @@
 public class ListElement {
 	
 	private ListElement next;
-	private ListElement previous;
+	//private ListElement previous;
 	private int data;
-	//private int listIndex;
 	
 	
 	public ListElement()
 	{
 		this.data = 0;
 		this.next = null;
-		this.previous = null;
+		//this.previous = null;
 	}
 	
 /**
@@ -43,48 +42,60 @@ public int getData() {
 public void addElement(ListElement le)
 {
 	ListElement test = this;
+	
 	if(this.next == null){
 		this.next = le;
-		le.previous = this;
+		//le.previous = this;
 	}
 	else
 	{
 		while (test.next != null)
 		{
-			System.out.println("traversing");
 			ListElement nextElement = test.next;
 			test = nextElement;
 		}
 		test.next= le;
-		le.previous =test;
+		//le.previous =test;
 	}
 }
 /**
 * @param index
 * the position of the linked list a user wishes to retrieve
 * @return
-*	None
+* returns the 
 **/
 public ListElement getElement(int index)
 {
+	int numIndex = 0;
 	int count = 0;
 	ListElement test = this;
-	//this traverses all the way to the head of the list
-	while (test.previous != null)
+	ListElement numData = this;
+	ListElement nextElement;
+	
+	//this while loop counts the number of items in connected to the linked list
+	while (numData.next != null)
 	{
-		ListElement previousElement = test.previous;
-		test = previousElement;
+		nextElement = numData.next;
+		numData = nextElement;
+		numIndex++;
 	}
-	while (test.next != null && count <= index)
+	
+	//
+	if(count > index)
 	{
-		ListElement nextElement = test.next;
-		test = nextElement;
-		count++;
-		System.out.println(count);
+		System.out.println("This linked list does not have the index of " + index);
+		return null;
 	}
-	System.out.println();
-	System.out.println(test);
-	return test;
+	else
+	{
+		while (count < index)
+		{
+			nextElement = test.next;
+			test = nextElement;
+			count++;
+		}
+		return test;
+	}
 }
 
 
@@ -98,12 +109,12 @@ public void printLinkedListHead()
 {
 	ListElement test = this;
 	
-	while (test.previous != null)
-	{
-		ListElement previousElement = test.previous;
-		test = previousElement;
-		System.out.println(test.next);
-	}
+//	while (test.previous != null)
+//	{
+//		ListElement previousElement = test.previous;
+//		test = previousElement;
+//		System.out.println(test.next);
+//	}
 	System.out.println(test.getData());
 	while (test.next != null)
 	{

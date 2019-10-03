@@ -18,6 +18,22 @@ public class ListTester{
 		list1.addElement(item4);
 		list1.addElement(item5);
 		
+		//item2.getElement(2);
+		ListElement ree = list1.getElement(2);
+		System.out.println(ree.getData());
+		System.out.println();
 		item4.printLinkedListHead();
+		
+		
+	
 	}
 }
+
+
+
+
+
+
+
+
+
