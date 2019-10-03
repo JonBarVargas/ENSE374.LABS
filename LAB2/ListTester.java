@@ -20,6 +20,7 @@ public class ListTester{
 		
 		//item2.getElement(2);
 		ListElement ree = list1.getElement(2);
+		ListElement crash = list1.getElement(7);
 		System.out.println(ree.getData());
 		System.out.println();
 		item4.printLinkedListHead();

@@ -79,11 +79,12 @@ public ListElement getElement(int index)
 		numData = nextElement;
 		numIndex++;
 	}
-	
-	//
-	if(count > index)
+
+	//this if statement filters the request if the user entereed an invalid index
+	if(index > numIndex)
 	{
-		System.out.println("This linked list does not have the index of " + index);
+		ListElement empty = new ListElement();
+		System.out.println("This linked list does not have the index of " + index + "an empty linked list with data 0 will be returned");
 		return null;
 	}
 	else
@@ -97,7 +98,6 @@ public ListElement getElement(int index)
 		return test;
 	}
 }
-
 
 /**
 * @param 
