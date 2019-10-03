@@ -73,6 +73,7 @@ public ListElement getElement(int index)
 	ListElement nextElement;
 	
 	//this while loop counts the number of items in connected to the linked list
+	//	with the current instance of the class as the head
 	while (numData.next != null)
 	{
 		nextElement = numData.next;
@@ -84,11 +85,12 @@ public ListElement getElement(int index)
 	if(index > numIndex)
 	{
 		ListElement empty = new ListElement();
-		System.out.println("This linked list does not have the index of " + index + "an empty linked list with data 0 will be returned");
+		System.out.println("This linked list does not have the index of " + index );
 		return null;
 	}
 	else
 	{
+		//this traverses the linked list until the desierd index has been reached
 		while (count < index)
 		{
 			nextElement = test.next;
@@ -99,6 +101,43 @@ public ListElement getElement(int index)
 	}
 }
 
+/**
+* @param 
+* 	None
+*@return
+*	None
+**/
+public ListElement deleteElement(int index)
+{
+	int count = 0;
+	ListElement nextElement =this; 
+	ListElement test = this;
+	ListElement temp = this;
+	if(index == 0)
+	{
+		test = this.next;
+		this.next = test;
+	}
+	else{
+		while (count < index)
+		{
+			test = test.next;
+			nextElement = test.next;
+			count++;
+		}
+		test =this;
+		count = 0;
+		while (count < index -1)
+		{
+			test = test.next;
+			count++;
+		}
+		test.next = nextElement;
+	}
+//	nextElement = test.next;
+//	test.next = nextElement;
+	return this;
+}
 /**
 * @param 
 * 	None
