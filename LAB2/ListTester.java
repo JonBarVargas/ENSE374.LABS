@@ -18,17 +18,23 @@ public class ListTester{
 		list1.addElement(item4);
 		list1.addElement(item5);
 		
-		System.out.println();
+		System.out.println("the linked list printed from the head");
 		item3.printLinkedListHead();
 		System.out.println();
+		
+		System.out.println("the linked list printed from the tail");
 		item4.printLinkedListTail();
+		
+		
+		System.out.println("testing the getElement function");
+		ListElement ree = item4.getElement(2);
+		System.out.println(ree.getData());
+		
+		System.out.println("testing the deleteElement function");
 		ListElement yeehaw = item2.deleteElement(2);
 		System.out.println();
 		yeehaw.printLinkedListHead();
-//		ListElement ree = item4.getElement(2);
-//		ListElement crash = list1.getElement(7);
-//		System.out.println(ree.getData());
-//		System.out.println();
+
 	
 	}
 }
