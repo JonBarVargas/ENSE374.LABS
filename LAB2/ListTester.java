@@ -27,9 +27,6 @@ public class ListTester{
 		ListElement crash = list1.getElement(7);
 		System.out.println(ree.getData());
 		System.out.println();
-		
-		
-		
 	
 	}
 }

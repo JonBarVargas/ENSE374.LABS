@@ -1,7 +1,6 @@
 public class ListElement {
 	
 	private ListElement next;
-	//private ListElement previous;
 	private int data;
 	
 	
@@ -9,7 +8,6 @@ public class ListElement {
 	{
 		this.data = 0;
 		this.next = null;
-		//this.previous = null;
 	}
 	
 /**
@@ -45,7 +43,6 @@ public void addElement(ListElement le)
 	
 	if(this.next == null){
 		this.next = le;
-		//le.previous = this;
 	}
 	else
 	{
@@ -54,7 +51,6 @@ public void addElement(ListElement le)
 			test = test.next;
 		}
 		test.next= le;
-		//le.previous = test;
 	}
 }
 
@@ -146,13 +142,6 @@ public ListElement deleteElement(int index)
 public void printLinkedListHead()
 {
 	ListElement test = this;
-	
-//	while (test.previous != null)
-//	{
-//		ListElement previousElement = test.previous;
-//		test = previousElement;
-//		System.out.println(test.next);
-//	}
 	System.out.println(test.getData());
 	while (test.next != null)
 	{
