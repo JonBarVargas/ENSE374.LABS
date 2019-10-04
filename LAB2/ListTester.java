@@ -18,14 +18,14 @@ public class ListTester{
 		list1.addElement(item4);
 		list1.addElement(item5);
 		
-		//item2.getElement(2);
-		list1.printLinkedListHead();
 		System.out.println();
-		list1.printLinkedListTail();
-//		ListElement yeehaw = item2.deleteElement(0);
-//		System.out.println();
-//		yeehaw.printLinkedListHead();
-//		ListElement ree = list1.getElement(2);
+		item3.printLinkedListHead();
+		System.out.println();
+		item4.printLinkedListTail();
+		ListElement yeehaw = item2.deleteElement(2);
+		System.out.println();
+		yeehaw.printLinkedListHead();
+//		ListElement ree = item4.getElement(2);
 //		ListElement crash = list1.getElement(7);
 //		System.out.println(ree.getData());
 //		System.out.println();

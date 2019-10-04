@@ -50,7 +50,6 @@ public void addElement(ListElement le)
 	{
 		while (test.next != null)
 		{
-			System.out.println("traversing");
 			ListElement nextElement = test.next;
 			test = nextElement;
 		}
@@ -70,9 +69,15 @@ public ListElement getElement(int index)
 	int numIndex = 0;
 	int count = 0;
 	ListElement test = this;
-	ListElement numData = this;
+	
 	ListElement nextElement;
 	
+	while (test.previous != null)
+	{
+		ListElement previousElement = test.previous;
+		test = previousElement;
+	}
+	ListElement numData = test;
 	//this while loop counts the number of items in connected to the linked list
 	//	with the current instance of the class as the head
 	while (numData.next != null)
@@ -112,27 +117,39 @@ public ListElement deleteElement(int index)
 	int count = 0;
 	ListElement nextElement =this; 
 	ListElement test = this;
+	ListElement headList = this;
+
+//this traverses the linked list to the head
+	while (test.previous != null)
+	{
+		ListElement previousElement = test.previous;
+		test = previousElement;
+		headList = test;
+	}
 
 	if(index == 0)
 	{
 		test = this.next;
+		test.previous = null;
 		return test;
 	}
 	else{
+		//this while loop traverses until the desired index
+		//nextElement will contain the linked list after the index
 		while (count < index)
 		{
 			test = test.next;
 			nextElement = test.next;
 			count++;
 		}
-		test =this;
 		count = 0;
 		while (count < index -1)
 		{
-			test = test.next;
+			headList = headList.next;
 			count++;
 		}
-		test.next = nextElement;
+		headList.next = nextElement;
+		nextElement.previous = headList;
 	}
 	return this;
 }
@@ -146,7 +163,6 @@ public ListElement deleteElement(int index)
 public void printLinkedListHead()
 {
 	ListElement test = this;
-	System.out.println(test.getData());
 	while (test.previous != null)
 	{
 		ListElement previousElement = test.previous;
@@ -154,7 +170,9 @@ public void printLinkedListHead()
 	}
 	while (test.next != null)
 	{
-		
+		if (test.previous == null){
+		System.out.println(test.getData());
+		}
 		ListElement nextElement = test.next;
 		test = nextElement;
 		System.out.println(test.getData());
@@ -177,11 +195,14 @@ public void printLinkedListTail()
 	}
 	while (test.previous != null)
 	{
+		
 		System.out.println(test.getData());
 		ListElement previousElement = test.previous;
 		test = previousElement;	
+		if (test.previous == null){
+		System.out.println(test.getData());
+		}
 	}
-	System.out.println(test.getData());
 }
 
 }
