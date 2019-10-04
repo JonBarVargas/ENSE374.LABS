@@ -20,7 +20,7 @@ public class ListTester{
 		
 		//item2.getElement(2);
 		list1.printLinkedListHead();
-		ListElement yeehaw = list1.deleteElement(2);
+		ListElement yeehaw = item2.deleteElement(0);
 		System.out.println();
 		yeehaw.printLinkedListHead();
 		ListElement ree = list1.getElement(2);

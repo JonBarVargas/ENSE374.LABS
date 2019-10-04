@@ -51,18 +51,18 @@ public void addElement(ListElement le)
 	{
 		while (test.next != null)
 		{
-			ListElement nextElement = test.next;
-			test = nextElement;
+			test = test.next;
 		}
 		test.next= le;
-		//le.previous =test;
+		//le.previous = test;
 	}
 }
+
 /**
 * @param index
 * the position of the linked list a user wishes to retrieve
 * @return
-* returns the 
+* returns the linked list element directed by the index given
 **/
 public ListElement getElement(int index)
 {
@@ -102,21 +102,21 @@ public ListElement getElement(int index)
 }
 
 /**
-* @param 
-* 	None
+* @param index
+* 	the index where the node will be deleted
 *@return
-*	None
+*	the linked list with the deleted node
 **/
 public ListElement deleteElement(int index)
 {
 	int count = 0;
 	ListElement nextElement =this; 
 	ListElement test = this;
-	ListElement temp = this;
+
 	if(index == 0)
 	{
 		test = this.next;
-		this.next = test;
+		return test;
 	}
 	else{
 		while (count < index)
@@ -134,10 +134,9 @@ public ListElement deleteElement(int index)
 		}
 		test.next = nextElement;
 	}
-//	nextElement = test.next;
-//	test.next = nextElement;
 	return this;
 }
+
 /**
 * @param 
 * 	None
@@ -163,12 +162,4 @@ public void printLinkedListHead()
 		System.out.println(test.getData());
 	}
 }
-
-
-
-
-
-
-
-
 }
