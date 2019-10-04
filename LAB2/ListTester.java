@@ -20,13 +20,15 @@ public class ListTester{
 		
 		//item2.getElement(2);
 		list1.printLinkedListHead();
-		ListElement yeehaw = item2.deleteElement(0);
 		System.out.println();
-		yeehaw.printLinkedListHead();
-		ListElement ree = list1.getElement(2);
-		ListElement crash = list1.getElement(7);
-		System.out.println(ree.getData());
-		System.out.println();
+		list1.printLinkedListTail();
+//		ListElement yeehaw = item2.deleteElement(0);
+//		System.out.println();
+//		yeehaw.printLinkedListHead();
+//		ListElement ree = list1.getElement(2);
+//		ListElement crash = list1.getElement(7);
+//		System.out.println(ree.getData());
+//		System.out.println();
 	
 	}
 }

@@ -9,6 +9,7 @@ public class ListElement {
 	{
 		this.data = 0;
 		this.next = null;
+		this.previous = null;
 	}
 	
 /**
@@ -41,17 +42,20 @@ public int getData() {
 public void addElement(ListElement le)
 {
 	ListElement test = this;
-	
 	if(this.next == null){
 		this.next = le;
+		le.previous = this;
 	}
 	else
 	{
 		while (test.next != null)
 		{
-			test = test.next;
+			System.out.println("traversing");
+			ListElement nextElement = test.next;
+			test = nextElement;
 		}
 		test.next= le;
+		le.previous =test;
 	}
 }
 
@@ -81,13 +85,12 @@ public ListElement getElement(int index)
 	//this if statement filters the request if the user entereed an invalid index
 	if(index > numIndex)
 	{
-		ListElement empty = new ListElement();
 		System.out.println("This linked list does not have the index of " + index );
 		return null;
 	}
 	else
 	{
-		//this traverses the linked list until the desierd index has been reached
+	//this traverses the linked list until the desierd index has been reached
 		while (count < index)
 		{
 			nextElement = test.next;
@@ -101,7 +104,7 @@ public ListElement getElement(int index)
 /**
 * @param index
 * 	the index where the node will be deleted
-*@return
+* @return
 *	the linked list with the deleted node
 **/
 public ListElement deleteElement(int index)
@@ -144,6 +147,11 @@ public void printLinkedListHead()
 {
 	ListElement test = this;
 	System.out.println(test.getData());
+	while (test.previous != null)
+	{
+		ListElement previousElement = test.previous;
+		test = previousElement;
+	}
 	while (test.next != null)
 	{
 		
@@ -152,4 +160,28 @@ public void printLinkedListHead()
 		System.out.println(test.getData());
 	}
 }
+
+/**
+* @param 
+* 	None
+*@return
+*	None
+**/
+public void printLinkedListTail()
+{
+	ListElement test = this;
+	while (test.next != null)
+	{
+		ListElement nextElement = test.next;
+		test = nextElement;
+	}
+	while (test.previous != null)
+	{
+		System.out.println(test.getData());
+		ListElement previousElement = test.previous;
+		test = previousElement;	
+	}
+	System.out.println(test.getData());
+}
+
 }
