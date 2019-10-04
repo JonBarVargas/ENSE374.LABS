@@ -2,6 +2,7 @@ public class ListElement {
 	
 	private ListElement next;
 	private int data;
+	private ListElement previous;
 	
 	
 	public ListElement()
