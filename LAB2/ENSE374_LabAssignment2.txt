@@ -1,0 +1,3 @@
+https://github.com/JonBarVargas/ENSE374.LABS/tree/LAB2
+
+**Note I have phase 1 in a branch called LAB2
