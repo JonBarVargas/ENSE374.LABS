@@ -2,9 +2,7 @@
 /**
  * savingsAccount 
  * 
- * An object that contains the minimum functionalities of
- * of a bank account. This is a parent class to the different
- * types of accounts at the hypothetical bank of Jonathan Vargas
+ * A class that emulates a savings account in a bank
  * 
  * 
  * @author Jonathan Vargas
