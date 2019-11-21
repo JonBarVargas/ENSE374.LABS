@@ -6,7 +6,7 @@ public class Main {
 		final int NUMCOL = 20;
 		final int NUMITEMS = 20;
 		Organism[][] World = new Organism[NUMROW][NUMCOL];
-		Organism[] livingItems = new Organism[20];
+		Organism[] livingItems = new Organism[NUMITEMS];
 		
 		initList(livingItems);
 		initWorld(World, livingItems, NUMROW, NUMCOL);

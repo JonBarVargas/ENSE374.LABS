@@ -4,8 +4,9 @@ public class Animal extends Organism {
     public int age;
     public String classification;
     public Animal() {
-    	   name = "";
-    	   classification = "";
+    	   this.name = "";
+    	   this.age = 0;
+    	   this.classification = "";
     }
     
  public void eat() 
@@ -14,4 +15,5 @@ public class Animal extends Organism {
  public void move()
  {
  }
+ 
 }
