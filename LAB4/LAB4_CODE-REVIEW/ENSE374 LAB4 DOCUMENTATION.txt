@@ -1,0 +1,24 @@
+Employee.java
+Added to the default constructor to store a blank string in all of the fields.
+I added more descriptive variable names in camel case.
+I also added comments to describe each function and added javadoc tags
+
+    private String fNam; -> firstName
+    private String lN; -> lastName
+    private String addr; -> address
+    private String NUM; -> phoneNum
+    private String hireDate; 
+    private String dol; -> salary
+
+EmployeeApplication.java
+function setSTUFFUP name has been changed to "setEmployee" as it is a more descriptive 
+name for setting up employee info.
+I added a public constant so the user can change the database size all in one line of code
+I added a printing format to seperate the 2 arrays (the sorted and the unorded employee array)
+eDSize was removed since we used a constant size
+
+    eD -> employeeDatabase
+    eA -> emplyeeAplication
+    sorteDByName ->sortByName
+    addEs -> addEmployees
+    (i used the same variable changes as stated in Employee.java)
