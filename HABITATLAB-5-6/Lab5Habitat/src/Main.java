@@ -4,7 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 		final int NUMROW = 20;
 		final int NUMCOL = 20;
-		final int NUMITEMS = 20;
+		final int NUMITEMS = 30;
 		Organism[][] World = new Organism[NUMROW][NUMCOL];
 		Organism[] livingItems = new Organism[NUMITEMS];
 		
@@ -33,6 +33,13 @@ public class Main {
 		}
 	}
 	
+	public static int randomGen()
+	{
+		int random;
+		random = (int)(Math.random()*((29-0)+1));
+		return random;
+	}
+	
 	public static void initWorld (Organism[][] board, Organism[] list, int numRow, int numCol)
 	{
 		int random;
@@ -40,11 +47,12 @@ public class Main {
 		{
 			for (int col = 0; col < numCol; col++)
 			{
-				random = (int)(Math.random()*((19-0)+1));
+				random = randomGen();
 				board[row][col] =  list[random];
 			}
 		}
 	}
+	
 	public static void initList (Organism[] list) {
 		Bluejay bluejay = new Bluejay();
 		Caterpillar caterpillar = new Caterpillar();
@@ -54,11 +62,13 @@ public class Main {
 		Rabbit rabbit = new Rabbit();
 		Squirrel squirrel = new Squirrel();
 		Wolf wolf = new Wolf();
+		Hawk hawk = new Hawk();
 		
 		Flower flower = new Flower();
 		Grass grass = new Grass();
 		Shrub shrub = new Shrub();
 		Tree tree = new Tree();
+		
 		
 		
 		list[0] = null;
@@ -81,6 +91,16 @@ public class Main {
 		list[17] = null;
 		list[18] = null;
 		list[19] = null;
+		list[20] = null;
+		list[21] = null;
+		list[22] = null;
+		list[23] = null;
+		list[24] = null;
+		list[25] = null;
+		list[26] = null;
+		list[27] = null;
+		list[28] = null;
+		list[29] = hawk;
 	}
 	
 }
