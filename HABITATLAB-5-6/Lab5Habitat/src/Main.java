@@ -2,31 +2,50 @@
 public class Main {
 
 	public static void main(String[] args) {
-		Organism[][] World = new Organism[20][20];
+		final int NUMROW = 20;
+		final int NUMCOL = 20;
+		final int NUMITEMS = 20;
+		Organism[][] World = new Organism[NUMROW][NUMCOL];
 		Organism[] livingItems = new Organism[20];
 		
-		int random;
-		random = (int)(Math.random()*((19-0)+1));
-		for (int i = 0; i < 40; i++) {
-			random = (int)(Math.random()*((20-0)+1));
-			System.out.println(random);
-		}
 		initList(livingItems);
+		initWorld(World, livingItems, NUMROW, NUMCOL);
+		displayWorld(World, livingItems, NUMROW, NUMCOL);
 		
-		
-		livingItems[10].display();
-		
-//		for (int row = 0; row < 20; row++)
-//		{
-//			for (int col = 0; col < 20; col++)
-//			{
-//				World[row][col] 
-//			}
-//		}
 		
 	}
+	public static void displayWorld(Organism[][] board, Organism[] list, int numRow, int numCol)
+	{
+		for (int row = 0; row < numRow; row++)
+		{
+			for (int col = 0; col < numCol; col++)
+			{
+				System.out.println("coordinate: " + row + "," + col);
+				if (board[row][col] == null) {
+					System.out.println("There is nothing here");
+				}
+				else
+				{
+				board[row][col].display();
+				}
+				System.out.println();
+			}
+		}
+	}
 	
-	public static void initList (Organism[] list ) {
+	public static void initWorld (Organism[][] board, Organism[] list, int numRow, int numCol)
+	{
+		int random;
+		for (int row = 0; row < numRow; row++)
+		{
+			for (int col = 0; col < numCol; col++)
+			{
+				random = (int)(Math.random()*((19-0)+1));
+				board[row][col] =  list[random];
+			}
+		}
+	}
+	public static void initList (Organism[] list) {
 		Bluejay bluejay = new Bluejay();
 		Caterpillar caterpillar = new Caterpillar();
 		Deer deer = new Deer();
