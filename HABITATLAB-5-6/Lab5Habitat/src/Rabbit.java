@@ -6,11 +6,9 @@ public class Rabbit extends Animal{
 	    	this.age = 4;
 	    	this.classification = "Mammal";
 	    }
-	    public void hop() {
-	        System.out.println("There is a Rabbit here and it hops");
-	    }
+
 	    public void display()
 	    {
-	    	this.hop();
+	    	System.out.println("There is a Rabbit here and it hops");
 	    }
 }

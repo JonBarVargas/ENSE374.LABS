@@ -6,11 +6,9 @@ public class Mouse extends Animal{
 	    	this.age = 2;
 	    	this.classification = "Rodent";
 	    }
-	    public void squeak() {
-	        System.out.println("There is a Mouse here and it squeaks");
-	    }
+	
 	    public void display()
 	    {
-	    	this.squeak();
+	    	System.out.println("There is a Mouse here and it squeaks");
 	    }
 }
