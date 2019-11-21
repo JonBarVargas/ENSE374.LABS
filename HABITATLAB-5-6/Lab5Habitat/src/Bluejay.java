@@ -6,11 +6,11 @@ public class Bluejay extends Animal{
 	    	this.age = 1;
 	    	this.classification = "Bird";
 	    }
-	    public void howl() {
+	    public void chirp() {
 	        System.out.println("There is a Bluejay here and it chirps");
 	    }
-	    public void displayActivity()
+	    public void display()
 	    {
-	    	this.howl();
+	    	this.chirp();
 	    }
 }

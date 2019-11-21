@@ -9,7 +9,7 @@ public class Wolf extends Animal{
     public void howl() {
         System.out.println("There is a wolf here and it howls");
     }
-    public void displayActivity()
+    public void display()
     {
     	this.howl();
     }
