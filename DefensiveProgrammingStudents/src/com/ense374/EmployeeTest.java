@@ -41,7 +41,7 @@ public static void main(String[] args) {
 			}
 			
 			
-		} while (!doneTest1);
+		} while (doneTest1);
 		
 		/* Test 2 Pass in bad values for an employee*/
 		//Pass in some bad data to the salary to ensure it can be handled
@@ -52,7 +52,7 @@ public static void main(String[] args) {
 		
 		/* Test 3 Read in a file containing Employee Data */
 		
-		System.out.println("Reading in data: " + cli.readInEmployeeData("employe.csv", employeeList));
+		System.out.println("Reading in data: " + cli.readInEmployeeData("employee.csv", employeeList));
 		
 		System.out.println("All tests pass!");
 		

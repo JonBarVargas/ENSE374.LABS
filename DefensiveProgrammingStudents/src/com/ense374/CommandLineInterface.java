@@ -40,12 +40,20 @@ private String mainMenuString = (
 	
 	public Employee getEmployeeDataFromCLI()
     {
+		float salary = 0;
         String firstName = getLine("Enter employee's first name:");
         String lastName = getLine("Enter employee's last name:");
         String address = getLine("Enter employee's address:");
         String phoneNumber = getLine("Enter employee's phone number:");
         String hireDate = getLine("Enter employee's hire date:");
-        float salary = getFloat("Enter employee's salary:");
+        while(salary == 0)
+        {
+        	salary = getFloat("Enter employee's salary:");
+            if (salary == 0)
+            {
+                System.out.format("%s\n", "PROG: Please try again.");
+            }
+        }
         Employee newEmployee = new Employee(firstName, lastName, address, phoneNumber, hireDate, salary);
         return newEmployee;
     }
@@ -76,7 +84,9 @@ private String mainMenuString = (
     {
         float floatAnswer = 0;
         Scanner in = primingInput(prompt);
-        floatAnswer = in.nextFloat();
+        if (in.hasNextFloat()) {
+        	floatAnswer = in.nextFloat();
+        }
         return floatAnswer;
     }
 	
