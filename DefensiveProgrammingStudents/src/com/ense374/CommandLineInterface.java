@@ -98,10 +98,12 @@ private String mainMenuString = (
         return in;
     }
 	
-	public boolean readInEmployeeData(String fileName, Employee[] employeeList)
+	public boolean readInEmployeeData(String fileName, Employee[] employeeList) 
 	{
 		int dataIndex = 0;
+		try {
 		Scanner in = new Scanner(Paths.get("employeeData.csv"));
+	
 		String line = "";
 		if (in.hasNextLine())
 		{
@@ -120,17 +122,27 @@ private String mainMenuString = (
 				String address = tokens[2];
 				String phoneNumber = tokens[3];
 				String hireDate = tokens[4];
-				//System.out.format("%s %s %s %s %s\n", firstName, lastName, address, phoneNumber, hireDate);
+				System.out.format("%s %s %s %s %s\n", firstName, lastName, address, phoneNumber, hireDate);
 				float salary = Float.parseFloat(tokens[5]);
 
 				Employee newEmployee = new Employee(firstName, lastName, address, phoneNumber, hireDate, salary);
-
+				try {
 				employeeList[dataIndex] = newEmployee;
+				}
+				catch(ArrayIndexOutOfBoundsException e) {
+					System.out.println("Sorry the array seems to be too small");
+				}
 				dataIndex++;
 					                
 			}
 		}
 		in.close();
+		}
+		catch(IOException e) {
+			System.out.println("File not found");
+		
+		}
+		
 		return true;
 		
 	} 	
